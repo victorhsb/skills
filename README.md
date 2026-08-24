@@ -34,12 +34,12 @@ repo holds no copy of them. Each entry is a pointer:
 
 ```json
 {
-  "name": "grilling",
+  "name": "find-skills",
   "source": {
     "source": "git-subdir",
-    "url": "https://github.com/mattpocock/skills.git",
-    "path": "skills/productivity/grilling",
-    "sha": "5b15a47f2d7150f545fbcacbfe381787fc0230dc"
+    "url": "https://github.com/vercel-labs/skills.git",
+    "path": "skills/find-skills",
+    "sha": "435076e78988e1e6ec40d00b0b1d76bdbbc5419a"
   }
 }
 ```
@@ -52,34 +52,50 @@ gets installed. And a pin only moves when I move it, deliberately, in a commit.
 `plugin.json` is optional for a plugin, and a directory holding a bare `SKILL.md` loads as a single
 skill, which is what makes a pointer at someone else's skill folder work with no wrapper.
 
+One entry can also carry many skills. Point `path` at the directory above them and list each one in
+a `skills` array, relative to that directory:
+
+```json
+{
+  "name": "mattpocock-skills",
+  "source": {
+    "source": "git-subdir",
+    "url": "https://github.com/mattpocock/skills.git",
+    "path": "skills",
+    "sha": "5b15a47f2d7150f545fbcacbfe381787fc0230dc"
+  },
+  "skills": ["./productivity/grilling", "./engineering/domain-modeling"]
+}
+```
+
+That is the shape the mattpocock entry uses, eight skills behind one install. Two consequences.
+Bundled skills are namespaced by their plugin, so `/grilling` is `/mattpocock-skills:grilling`. And
+all eight enable and disable together, with every description loaded into every session whether or
+not the skill fires, 308 tokens for this bundle.
+
+Do not set `path` to `"."` to grab a whole repo. The sparse checkout runs in cone mode, so a root
+pattern pulls root-level files and no directories at all. The install still reports success and the
+plugin loads zero skills. Bundle from a real subdirectory, or use a `github` source, which clones
+the whole repo and honors the upstream `plugin.json`.
+
 ### Catalog
 
 | Plugin | Upstream | License |
 | --- | --- | --- |
-| `grilling` | mattpocock/skills | MIT |
-| `grill-me` | mattpocock/skills | MIT |
-| `grill-with-docs` | mattpocock/skills | MIT |
-| `domain-modeling` | mattpocock/skills | MIT |
-| `handoff` | mattpocock/skills | MIT |
-| `wayfinder` | mattpocock/skills | MIT |
-| `writing-for-agents` | mattpocock/skills | MIT |
-| `improve-codebase-architecture` | mattpocock/skills | MIT |
+| `mattpocock-skills` | mattpocock/skills | MIT |
 | `find-skills` | vercel-labs/skills | MIT |
 | `blast-radius` | cursor/plugins | none published |
 | `unslop-skill` | cursor/plugins | none published |
 | `agent-md-refactor` | softaworks/agent-toolkit | MIT |
 
+`mattpocock-skills` carries eight skills: `grilling`, `grill-me`, `grill-with-docs`,
+`domain-modeling`, `handoff`, `wayfinder`, `writing-for-agents`, `improve-codebase-architecture`.
+Bundling them is what keeps them working. Four call each other by name: `grill-me` and
+`improve-codebase-architecture` reach for `grilling`, and `grill-with-docs` reaches for both
+`grilling` and `domain-modeling`. As separate entries they broke quietly when installed alone.
+
 cursor/plugins ships no license file, so those two entries carry no license grant. Pointing at them
 copies nothing, but read the repo before you depend on the code.
-
-### Entries that need a companion
-
-Some of these skills call each other by name and break quietly when installed alone. Install the
-pair:
-
-- `grill-me` calls `grilling`
-- `grill-with-docs` calls `grilling` and `domain-modeling`
-- `improve-codebase-architecture` calls `grilling`
 
 ## Maintaining this
 
@@ -108,7 +124,7 @@ fine. To verify a new entry, install it:
 ```bash
 claude plugin marketplace add "$PWD"
 claude plugin install <entry>@victorhsb-skills
-claude plugin details <entry>            # confirm Skills (1)
+claude plugin details <entry>            # confirm the skill count and the names
 claude plugin uninstall <entry> && claude plugin marketplace remove victorhsb-skills
 ```
 
