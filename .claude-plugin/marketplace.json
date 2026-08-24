@@ -1,0 +1,202 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "victorhsb-skills",
+  "version": "1.0.0",
+  "description": "My own Claude Code commands and output style, plus a curated passthrough catalog of third-party skills fetched from their own repositories.",
+  "owner": {
+    "name": "victorhsb",
+    "url": "https://github.com/victorhsb"
+  },
+  "plugins": [
+    {
+      "name": "victorhsb-tools",
+      "source": "./",
+      "version": "1.0.0",
+      "description": "Slash commands and an output style: branchless commits, session-learning capture, memory curation, parallel review, and the unslop writing voice.",
+      "category": "productivity",
+      "tags": ["commands", "output-style", "writing", "memory", "git"]
+    },
+
+    {
+      "name": "grilling",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/mattpocock/skills.git",
+        "path": "skills/productivity/grilling",
+        "sha": "5b15a47f2d7150f545fbcacbfe381787fc0230dc"
+      },
+      "description": "Interview the user in rounds against a design tree until a plan is shared understanding.",
+      "author": { "name": "Matt Pocock", "url": "https://github.com/mattpocock" },
+      "repository": "https://github.com/mattpocock/skills",
+      "license": "MIT",
+      "category": "thinking",
+      "tags": ["passthrough", "planning"]
+    },
+    {
+      "name": "grill-me",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/mattpocock/skills.git",
+        "path": "skills/productivity/grill-me",
+        "sha": "5b15a47f2d7150f545fbcacbfe381787fc0230dc"
+      },
+      "description": "User-invocable entry point for grilling. Requires the grilling plugin.",
+      "author": { "name": "Matt Pocock", "url": "https://github.com/mattpocock" },
+      "repository": "https://github.com/mattpocock/skills",
+      "license": "MIT",
+      "category": "thinking",
+      "tags": ["passthrough", "planning", "requires-grilling"]
+    },
+    {
+      "name": "grill-with-docs",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/mattpocock/skills.git",
+        "path": "skills/engineering/grill-with-docs",
+        "sha": "5b15a47f2d7150f545fbcacbfe381787fc0230dc"
+      },
+      "description": "Grilling that also writes ADRs and a glossary as it goes. Requires grilling and domain-modeling.",
+      "author": { "name": "Matt Pocock", "url": "https://github.com/mattpocock" },
+      "repository": "https://github.com/mattpocock/skills",
+      "license": "MIT",
+      "category": "thinking",
+      "tags": ["passthrough", "planning", "requires-grilling", "requires-domain-modeling"]
+    },
+    {
+      "name": "domain-modeling",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/mattpocock/skills.git",
+        "path": "skills/engineering/domain-modeling",
+        "sha": "5b15a47f2d7150f545fbcacbfe381787fc0230dc"
+      },
+      "description": "Build and sharpen a project's domain model: CONTEXT.md glossaries and ADRs.",
+      "author": { "name": "Matt Pocock", "url": "https://github.com/mattpocock" },
+      "repository": "https://github.com/mattpocock/skills",
+      "license": "MIT",
+      "category": "engineering",
+      "tags": ["passthrough", "documentation"]
+    },
+    {
+      "name": "handoff",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/mattpocock/skills.git",
+        "path": "skills/productivity/handoff",
+        "sha": "5b15a47f2d7150f545fbcacbfe381787fc0230dc"
+      },
+      "description": "Compact the current conversation into a handoff document for a fresh agent.",
+      "author": { "name": "Matt Pocock", "url": "https://github.com/mattpocock" },
+      "repository": "https://github.com/mattpocock/skills",
+      "license": "MIT",
+      "category": "productivity",
+      "tags": ["passthrough", "context"]
+    },
+    {
+      "name": "wayfinder",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/mattpocock/skills.git",
+        "path": "skills/engineering/wayfinder",
+        "sha": "5b15a47f2d7150f545fbcacbfe381787fc0230dc"
+      },
+      "description": "Chart work too big for one session as decision tickets on an issue tracker, resolved one at a time.",
+      "author": { "name": "Matt Pocock", "url": "https://github.com/mattpocock" },
+      "repository": "https://github.com/mattpocock/skills",
+      "license": "MIT",
+      "category": "planning",
+      "tags": ["passthrough", "planning"]
+    },
+    {
+      "name": "writing-for-agents",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/mattpocock/skills.git",
+        "path": "skills/productivity/writing-for-agents",
+        "sha": "5b15a47f2d7150f545fbcacbfe381787fc0230dc"
+      },
+      "description": "How to write any document an agent consumes: skills, AGENTS.md, CLAUDE.md. Formerly writing-great-skills.",
+      "author": { "name": "Matt Pocock", "url": "https://github.com/mattpocock" },
+      "repository": "https://github.com/mattpocock/skills",
+      "license": "MIT",
+      "category": "meta",
+      "tags": ["passthrough", "skill-authoring"]
+    },
+    {
+      "name": "improve-codebase-architecture",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/mattpocock/skills.git",
+        "path": "skills/engineering/improve-codebase-architecture",
+        "sha": "5b15a47f2d7150f545fbcacbfe381787fc0230dc"
+      },
+      "description": "Scan a codebase for deepening opportunities, report them as HTML, then grill through the one you pick.",
+      "author": { "name": "Matt Pocock", "url": "https://github.com/mattpocock" },
+      "repository": "https://github.com/mattpocock/skills",
+      "license": "MIT",
+      "category": "engineering",
+      "tags": ["passthrough", "refactoring", "requires-grilling"]
+    },
+
+    {
+      "name": "find-skills",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/vercel-labs/skills.git",
+        "path": "skills/find-skills",
+        "sha": "435076e78988e1e6ec40d00b0b1d76bdbbc5419a"
+      },
+      "description": "Discover and install skills from the open agent-skills ecosystem.",
+      "author": { "name": "Vercel Labs", "url": "https://github.com/vercel-labs" },
+      "repository": "https://github.com/vercel-labs/skills",
+      "license": "MIT",
+      "category": "meta",
+      "tags": ["passthrough", "discovery"]
+    },
+
+    {
+      "name": "blast-radius",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/cursor/plugins.git",
+        "path": "pstack/skills/blast-radius",
+        "sha": "46125561306434d8a1d7745d540d8932ab0cd2a2"
+      },
+      "description": "Find what a change could break outside the diff, and prove the safety claim by running code.",
+      "author": { "name": "Cursor", "url": "https://github.com/cursor" },
+      "repository": "https://github.com/cursor/plugins",
+      "category": "engineering",
+      "tags": ["passthrough", "review", "no-upstream-license"]
+    },
+    {
+      "name": "unslop-skill",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/cursor/plugins.git",
+        "path": "pstack/skills/unslop",
+        "sha": "46125561306434d8a1d7745d540d8932ab0cd2a2"
+      },
+      "description": "Revision pass over written text to cut AI tells. The upstream skill the victorhsb-tools unslop output style is based on.",
+      "author": { "name": "Cursor", "url": "https://github.com/cursor" },
+      "repository": "https://github.com/cursor/plugins",
+      "category": "writing",
+      "tags": ["passthrough", "writing", "no-upstream-license"]
+    },
+
+    {
+      "name": "agent-md-refactor",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/softaworks/agent-toolkit.git",
+        "path": "skills/agent-md-refactor",
+        "sha": "3027f20f3181758385a1bb8c022d4041dfb4de84"
+      },
+      "description": "Refactor an AGENTS.md or CLAUDE.md into a tighter, better-scoped document.",
+      "author": { "name": "Softaworks", "url": "https://github.com/softaworks" },
+      "repository": "https://github.com/softaworks/agent-toolkit",
+      "license": "MIT",
+      "category": "meta",
+      "tags": ["passthrough", "documentation"]
+    }
+  ]
+}

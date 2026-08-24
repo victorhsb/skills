@@ -1,0 +1,19 @@
+{
+  "name": "victorhsb-tools",
+  "description": "Slash commands and an output style: branchless commits, session-learning capture, memory curation, parallel review, and the unslop writing voice.",
+  "version": "1.0.0",
+  "author": {
+    "name": "victorhsb",
+    "url": "https://github.com/victorhsb"
+  },
+  "repository": "https://github.com/victorhsb/skills",
+  "license": "MIT",
+  "keywords": [
+    "commands",
+    "output-style",
+    "writing",
+    "memory",
+    "code-review",
+    "git"
+  ]
+}
