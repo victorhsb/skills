@@ -10,7 +10,7 @@ this repo points at instead of copying.
 
 ## What is mine
 
-The `victorhsb-tools` plugin is the content in this repo. Four slash commands and one output style.
+The `victorhsb-tools` plugin is the content in this repo. It includes four slash commands, one output style, and the locally maintained [Jujutsu skill](skills/jj-guide/SKILL.md). The skill covers local changes, bookmarks, pull requests, and recovery in jj workspaces.
 
 | Command | What it does |
 | --- | --- |
