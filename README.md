@@ -1,12 +1,31 @@
 # skills
 
-My Claude Code commands and output style, plus a curated catalog of third-party skills that
-this repo points at instead of copying.
+This repository is a plugin marketplace for Claude Code and Codex. Both clients read
+[`.claude-plugin/marketplace.json`](.claude-plugin/marketplace.json).
+
+## Install in Claude Code
 
 ```
 /plugin marketplace add victorhsb/skills
 /plugin install victorhsb-tools@victorhsb-skills
 ```
+
+## Install in Codex
+
+Run these commands in your terminal:
+
+```bash
+codex plugin marketplace add victorhsb/skills
+codex plugin add victorhsb-tools@victorhsb-skills
+```
+
+For a local checkout, use `codex plugin marketplace add "$PWD"` from the repository root
+in place of the first command. Run `codex plugin list --marketplace victorhsb-skills` to
+inspect the catalog and installation status.
+
+Start a new Codex session and invoke `$jj-guide` for Jujutsu workflows. Codex CLI 0.167.0
+also imports `/multireview` as `$source-command-multireview`. The other slash commands
+and the selectable Unslop output style described below are Claude Code features.
 
 ## What is mine
 
@@ -98,6 +117,9 @@ cursor/plugins ships no license file, so those two entries carry no license gran
 copies nothing, but read the repo before you depend on the code.
 
 ## Maintaining this
+
+For the repository layout, naming conventions, and what to include in a pull request, see the
+[contributor guide](AGENTS.md).
 
 **Moving a pin.** Get the new commit, check the path still exists at it, then edit the `sha`:
 
