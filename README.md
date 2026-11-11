@@ -10,12 +10,12 @@ this repo points at instead of copying.
 
 ## What is mine
 
-The `victorhsb-tools` plugin is the content in this repo. It includes four slash commands, one output style, and the locally maintained [Jujutsu skill](skills/jj-guide/SKILL.md). The skill covers local changes, bookmarks, pull requests, and recovery in jj workspaces.
+The `victorhsb-tools` plugin is the content in this repo. It includes three command files, the Unslop output style, and two bundled skills. The [Jujutsu skill](skills/jj-guide/SKILL.md) covers local changes, bookmarks, pull requests, and recovery in jj workspaces.
 
 | Command | What it does |
 | --- | --- |
 | `/bc` | Branchless commit via `git record` (git-branchless), with optional `stack-pr export`. Knows the flags `git record` actually accepts and why `git commit --amend` breaks a stack-pr link. |
-| `/learn` | Reviews the session and does two things: proposes fixes to the commands and skills that were exercised, and extracts durable learnings into project memory. |
+| `/learn` | The [learn skill](skills/learn/SKILL.md) improves workflows exercised during the session and saves durable lessons through ai-memory. If ai-memory is unavailable, it reports the unsaved lessons. |
 | `/dream` | Curation pass over a project memory directory. Finds stale, redundant, and derivable memories, proposes deletes and merges, then reconciles the index against the files on disk. |
 | `/multireview` | Reviews the current change along correctness, robustness, and simplicity in parallel, then converges the findings into one prioritized report. |
 
