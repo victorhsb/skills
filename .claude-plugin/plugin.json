@@ -1,7 +1,7 @@
 {
   "name": "victorhsb-tools",
-  "description": "Slash commands and an output style: branchless commits, session-learning capture, memory curation, parallel review, and the unslop writing voice.",
-  "version": "1.1.0",
+  "description": "Scope new services, use Jujutsu, capture session lessons, curate memory, review code, record branchless commits, and write with the Unslop style.",
+  "version": "1.2.0",
   "author": {
     "name": "victorhsb",
     "url": "https://github.com/victorhsb"

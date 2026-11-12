@@ -29,7 +29,7 @@ and the selectable Unslop output style described below are Claude Code features.
 
 ## Included in victorhsb-tools
 
-The plugin includes three command files, the Unslop output style, and two bundled skills. The [Jujutsu skill](skills/jj-guide/SKILL.md) covers local changes, bookmarks, pull requests, and recovery in jj workspaces.
+The plugin includes three command files, the Unslop output style, and three bundled skills. The [Jujutsu skill](skills/jj-guide/SKILL.md) covers local changes, bookmarks, pull requests, and recovery in jj workspaces. Invoke the [scope skill](skills/scope/SKILL.md) with `/victorhsb-tools:scope` in Claude Code or `$scope` in Codex to define a service and record design and implementation decisions before planning.
 
 | Command | What it does |
 | --- | --- |
